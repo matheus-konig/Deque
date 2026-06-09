@@ -29,7 +29,7 @@ class Deque:
         '''Adiciona um elemento no começo da lista. Se a Deque já estiver cheia causa um Overflow Error'''
         if self.is_full(): 
             raise OverflowError("Não foi possível adicionar o elemento, pois o limite da Deque foi atingido.")
-        self._elements.insert(0, element)
+        self._elements.insert(0, element) # parâmetros: insert(indice, elemento); nesse caso o indice 0 representa a primeira posição na lista.
 
     def insert_last(self, element):
         '''Adiciona um elemento no final da lista. Se a Queue já estiver cheia causa um Overflow Error'''
@@ -43,7 +43,7 @@ class Deque:
         if self.is_empty():
             raise IndexError("Não é possível remover elementos da lista, pois ela já está vazia.")
         
-        removed_element = self._elements.pop(0)
+        removed_element = self._elements.pop(0) 
         return removed_element
 
 
@@ -52,7 +52,7 @@ class Deque:
         if self.is_empty():
             raise IndexError("Não é possível remover elementos da lista, pois ela já está vazia.")
         
-        removed_element = self._elements.pop()
+        removed_element = self._elements.pop() # parâmetros: pop(posicao); quando não especificada a posição padrão é -1, que se refere ao último elemento.
         return removed_element
 
     def first(self):
@@ -65,7 +65,7 @@ class Deque:
         '''Retorna o valor do último elemento na lista. Se estiver vazio causa um Index Error.'''
         if self.is_empty():
             raise IndexError("Não há elementos na lista para visualizar.")
-        return self._elements[-1]
+        return self._elements[-1] # -1 retorna o último elemento.
 
 
 
